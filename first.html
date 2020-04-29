@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiply</title>
+
+<style>
+body{
+	background-color:lime;
+}
+
+button{
+	width:25px;
+	height:25px;
+	border-radius:25px;
+	background-color:yellow;
+	color:blue;
+	cursor:pointer;
+	display:none; 
+	position:absolute;
+	left:450px;
+	top:120px;
+}
+
+button:hover{
+	width:25px;
+	height:25px;
+	border-radius:25px;
+	color:yellow;
+	background-color:blue;
+	cursor:pointer;
+	display:none; 
+	position:absolute;
+	left:450px;
+	top:120px;
+}
+
+input{
+	background-color:orange;
+	color:blue;
+}
+
+.btn{
+	background-color:pink;
+	color:gray;
+}
+
+.btn:hover{
+	color:pink;
+	background-color:gray;
+}
+
+#result{
+	color:navy;
+	background:antiquewhite;
+}
+
+.b{
+	text-align:center;
+	font-size:18pt;
+	color:white;
+	background-color:black;
+}
+
+.a{
+	background-color:red;
+	color:yellow;
+	font-size:36pt;
+	text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="a">Multiplication tables</div>
+<div class="b">Any number is fine</div><br><br>
+<input type="number" placeholder="Which no.?" id="a">
+<input type="number" placeholder="And how many times?" id="b">
+<input class="btn" type="button" value="Submit" onclick="getTable()">
+<button id="dd" onclick="window.location.reload()">&#x27F3;</button>
+<div id="result"></div>
+</body>
+</html>
+<script>
+function getTable(){
+ var _x = document.getElementById("a").value;
+ var x = parseFloat(_x);
+ var _y = document.getElementById("b").value;
+ var y = parseFloat(_y);
+ var df = document.getElementById("dd");
+ df.style.display ="block"
+ var i;
+ for(i = 1;i <= y; i++){
+	var a = document.createElement("div");
+	var b = document.createTextNode(x + " × " + i + " = " + i*x);
+	a.appendChild(b);
+	var c =  document.createElement("br");
+	var d = document.getElementById("result");
+	d.appendChild(b);
+	d.appendChild(c);
+ }
+}
+</script>
